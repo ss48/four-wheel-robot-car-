@@ -1,6 +1,4 @@
 
-![Screens![car](https://github.com/user-attachments/assets/8a10ff29-2975-4ad6-af17-d9807cd7507a)
-
 h![car](https://github.com/user-attachments/assets/421d1374-6244-4f82-8bbd-cc3289567d6c)
 ot from 2025-02-23 15-47-19](https://github.com/user-attachments/assets/feaf1294-1754-46cf-bc66-3fcbafde0d87)
 
