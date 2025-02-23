@@ -6,7 +6,11 @@
 ![Screenshot from 2025-02-23 15-47-19](https://github.com/user-attachments/assets/db0d1678-a6d1-4357-a22e-c2c5e02cbd65)
 
 update the package name and the address
+launch the package:
+
 roslaunch test_urdf car.launch
+view the frames:
+
 rosrun tf view_frames 
 
 rosrun rqt_image_view rqt_image_view
