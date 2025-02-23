@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Load the robot description from the URDF/Xacro file -->
+  <!-- Load Gazebo ROS Control parameters -->
+
+   
+  <param name="robot_description" command="$(find xacro)/xacro /home/dell/catkin_ws/src/test_urdf/launch/RobotCar.urdf.xacro"/>
+  <rosparam file="$(find test_urdf)/config/gazebo_ros_control.yaml" command="load" /> 
+  <rosparam file="$(find test_urdf)/config/diff_drive.yaml" command="load" />
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="diff_drive_controller" output="screen" />
+
+
+  <!-- Start robot_state_publisher to publish robot states based on the URDF -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" output="screen"/>
+
+  <!-- Start Joint State Publisher (and GUI, if desired) -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" output="screen"/>
+  <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" output="screen"/>
+
+
+
+  <!-- Start Gazebo with an empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+
+  <!-- Spawn the robot in Gazebo -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model my_robot"/>
+
+  <!-- Launch RViz -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d /home/dell/catkin_ws/src/test_urdf/robot4.rviz" required="true"/>
+</launch>
+
