@@ -25,7 +25,7 @@
   </include>
 
   <!-- Spawn the robot in Gazebo -->
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model my_robot"/>
+  <!--node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model my_robot"/-->
 
   <!-- Launch RViz -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d /home/dell/catkin_ws/src/test_urdf/robot4.rviz" required="true"/>
